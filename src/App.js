@@ -6,7 +6,7 @@ import Random from './Random';
 import BoxColor from './BoxColor';
 import CreditCard from './CreditCard';
 import Rating from './Rating';
-import DriverCard from './Drivercard';
+import DriverCard from './DriverCard';
 
 function App() {
   return (

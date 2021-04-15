@@ -6,6 +6,26 @@ function CreditCard(props) {
     backgroundColor: `${props.bgColor}`,
     color: `${props.color}`,
   };
+
+  function replaceCardNumbers(number) {
+    let count = number.length;
+    let n = [];
+    for (let i = 0; i < count; i++) {
+      if (i < 12) {
+        n[i] = number[i].replace(/^\d+$/, '*');
+      } else {
+        n[i] = number[i];
+      }
+    }
+
+    let totalNumbers = '';
+    for (let i = 0; i < count; i++) {
+      totalNumbers += n[i];
+    }
+    return totalNumbers;
+  }
+  let num = replaceCardNumbers(props.number).match(/.{1,4}/g);
+
   return (
     <div className="credit-card" style={style}>
       <div className="logo">
@@ -14,7 +34,9 @@ function CreditCard(props) {
           src={props.type === 'Visa' ? visaLogo : mastercardLogo}
         />
       </div>
-      <div className="number">{props.number}</div>
+      <div className="number">
+        {num[0]} {num[1]} {num[2]} {num[3]}
+      </div>
       <div className="info">
         Expires: {props.expirationMonth}/
         {props.expirationYear.toString().slice(2, 4)} {props.bank}
