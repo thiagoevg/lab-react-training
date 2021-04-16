@@ -12,7 +12,7 @@ function NumbersTable(props) {
       </div>
     );
   }
-  return <div class="box">{boxList}</div>;
+  return <div class="bricks-container">{boxList}</div>;
 }
 
 export default NumbersTable;
