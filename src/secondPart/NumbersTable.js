@@ -6,13 +6,14 @@ function NumbersTable(props) {
     boxList.push(
       <div
         className="brick"
+        key={i}
         style={{ backgroundColor: (i + 1) % 2 === 0 ? 'red' : 'white' }}
       >
         {i + 1}
       </div>
     );
   }
-  return <div class="bricks-container">{boxList}</div>;
+  return <div className="bricks-container">{boxList}</div>;
 }
 
 export default NumbersTable;

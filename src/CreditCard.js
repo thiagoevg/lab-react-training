@@ -32,6 +32,7 @@ function CreditCard(props) {
         <img
           className="logo-image"
           src={props.type === 'Visa' ? visaLogo : mastercardLogo}
+          alt="logo"
         />
       </div>
       <div className="number">

@@ -23,7 +23,7 @@ function Greetings(props) {
   }
 
   return (
-    <div class="box">
+    <div className="box">
       {greeting} {props.children}
     </div>
   );
